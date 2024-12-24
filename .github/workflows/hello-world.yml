@@ -1,1 +1,26 @@
 
+# Should have a name
+name: hello-world
+# A trigger must be defined for the worklofw to be valid
+# on is a keyword to define the trigger event for the workflow. So it would be like "ON PUSH TO THIS REPO DO SOMETHING."
+# push event runs your worklow when you push a commit or a tag or create a repo from a template.
+on: push
+# A workflow must also have a defined job. This is the thing to do when the event defined by "On" happens.
+# You can have one or more jobs.
+# You can have sync or async jobs.
+# Each job is made up of one or more steps
+jobs: 
+    hello-world-job:
+        # You have to specify a runner for the job.
+        # Runners can be self hosted or Github hosted.
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Check out repo code
+              # This step is used to access the repo. Used for runninh tests and builds.
+              uses: actions/checkout@v3
+            - run: echo "$(cat hello_world.txt)"
+            
+
+
+
+
