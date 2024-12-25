@@ -1,3 +1,6 @@
 module.exports = {
-    extends: 'next/core-web-vitals',
-};
+    extends: [
+      //...
+      'plugin:@next/next/recommended',
+    ],
+  }
